@@ -1,0 +1,62 @@
+{
+  "versionName": "0.244.0 (ada81fb)",
+  "gitHash": "ada81fb",
+  "versionCode": 671,
+  "publishedAt": "2026-11-19T02:54:24Z",
+  "changelog": [
+    "feat(chat): allow group admins to delete any participant message",
+    "feat(sticker): receive, play, and send audio stickers",
+    "refactor(plugins): prune duplicate and retired bundled presets",
+    "fix(core): align group admin revoke participant with addressing mode",
+    "feat(media,core,ffi): support audio stickers send and download"
+  ],
+  "changelogEntries": [
+    {
+      "message": "feat(chat): allow group admins to delete any participant message",
+      "date": "2026-11-19T08:42:15+07:00",
+      "hash": "ada81fb"
+    },
+    {
+      "message": "feat(sticker): receive, play, and send audio stickers",
+      "date": "2026-11-19T08:42:15+07:00",
+      "hash": "f86207c"
+    },
+    {
+      "message": "refactor(plugins): prune duplicate and retired bundled presets",
+      "date": "2026-11-19T08:42:00+07:00",
+      "hash": "5889dac"
+    },
+    {
+      "message": "fix(core): align group admin revoke participant with addressing mode",
+      "date": "2026-11-19T08:41:49+07:00",
+      "hash": "950f98c"
+    },
+    {
+      "message": "feat(media,core,ffi): support audio stickers send and download",
+      "date": "2026-11-19T08:41:49+07:00",
+      "hash": "6abdee1"
+    }
+  ],
+  "syncToken": "GhsYHBZDXHAUEBoLKhFLBgsfQDgDEhgBKwlWPAwzHwAcF18dCQAAGAA6XhsbCjMXShcBHgoNHwAKXDscDgAPMBIBSgUcCx4DDB1eLRwVAgoxFEoBDQEbHgUHDAc2HBdAATYd",
+  "previousGitHash": "1a5432f",
+  "assets": {
+    "arm64-v8a": {
+      "abi": "arm64-v8a",
+      "downloadUrl": "https://github.com/Towartz/Rolleys-release-build/releases/download/android-rolling/rolleys-release-arm64-v8a.apk",
+      "fileSizeBytes": 29182645,
+      "sha256": "baa97ffed5e96eddeabc1c9dd9f3a7c05237ff97ed95682b229f0cb24546610a",
+      "abiLabel": "ARM64 (64-bit)"
+    },
+    "armeabi-v7a": {
+      "abi": "armeabi-v7a",
+      "downloadUrl": "https://github.com/Towartz/Rolleys-release-build/releases/download/android-rolling/rolleys-release-armeabi-v7a.apk",
+      "fileSizeBytes": 20871865,
+      "sha256": "7733a0d819da013e76484534f307a296c3e1b9eca6ac5f20a52627f77ada09b7",
+      "abiLabel": "ARMv7 (32-bit)"
+    }
+  },
+  "apkUrl_arm64": "https://github.com/Towartz/Rolleys-release-build/releases/download/android-rolling/rolleys-release-arm64-v8a.apk",
+  "sha256_arm64": "baa97ffed5e96eddeabc1c9dd9f3a7c05237ff97ed95682b229f0cb24546610a",
+  "apkUrl_armv7": "https://github.com/Towartz/Rolleys-release-build/releases/download/android-rolling/rolleys-release-armeabi-v7a.apk",
+  "sha256_armv7": "7733a0d819da013e76484534f307a296c3e1b9eca6ac5f20a52627f77ada09b7"
+}
