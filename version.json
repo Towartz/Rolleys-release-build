@@ -1,292 +1,141 @@
 {
-  "versionName": "0.257.1 (90d753f)",
-  "gitHash": "90d753f",
-  "versionCode": 702,
-  "publishedAt": "2026-11-20T12:12:19Z",
+  "versionName": "0.268.0 (29325fe)",
+  "gitHash": "29325fe",
+  "versionCode": 722,
+  "publishedAt": "2026-11-24T17:25:53Z",
   "changelog": [
-    "fix(updater): publish and download only split release APKs and version.json",
-    "feat(chat): log live edit history and allow editing media captions",
-    "feat(core): log edit history on self-edits and support media caption edits",
-    "feat(core): support audio sticker E2EE metadata, product snapshots, and sticker quote uploads",
-    "perf(core): preallocate history sync buffers and drop slack chat message capacity",
-    "fix(media): add SSRF protection, bounded fetches, and safe HTML parsing for link previews",
-    "fix(media): bound image decode dimensions and optimize WebP EXIF handling",
-    "fix(media): bound audio decoding limits and harden Ogg/Opus conversion",
-    "fix(media): harden private file creation and optimize streaming media I/O",
-    "perf(binary): add depth/allocation guards and LUT packing in binary codec",
-    "fix(binary): harden JID, node serde, and token lookup against DoS and log injection",
-    "fix(proto): harden protobuf decode bounds and optimize allocations",
-    "feat(res): add strings for lyrics sync, favorite stickers, and presence settings",
-    "feat(theme): persist sticker sheet open and send confirmation preferences",
-    "fix(status): harden StoryPlayback bounds checks and avoid retired player leaks",
-    "fix(status): improve touch reliability, Canvas progress bar, and viewer safety",
-    "feat(conversation): wire favorite stickers and sticker sheet preferences",
-    "feat(privacy): add custom typing presence, auto-presence, and rolleys scheme guard",
-    "feat(stickers): add favorite stickers storage and picker/context menu controls",
-    "feat(media): add preview lyrics offset estimation, tap-to-sync, and sticker audio parsing",
-    "feat(quote): add product metadata fields and WebP sticker quote thumbnails",
-    "feat(settings): support custom gallery app icon pinned shortcuts",
-    "feat(diagnostics): add live leak, frame jank, and process resource watcher",
-    "fix(crash): load bounded crash logs asynchronously and validate file paths",
-    "refactor(about): harden unlock puzzle state machine and feature visibility storage",
-    "perf(core): optimize BoundedCache locking and add trimToSize",
-    "feat(fake-quote): add toggle to combine or isolate channel profile spoof",
-    "perf(chat-ui): prevent ANR on 50k-100k+ char messages and fix read more",
-    "perf(messages): bound quoted message summary prefix to 512 chars",
-    "perf(ui): optimize chat list, wallpaper, theme, and message components",
-    "perf(app,service): optimize startup, raw logger, and keep-alive services",
-    "perf(service): offload BootReceiver work via goAsync on IO dispatcher",
-    "feat(app): add stealth metadata, call blocker, fake quotes, and perf fixes",
-    "chore(scripts): update native build helper utilities",
-    "feat(ffi): sync UniFFI bindings and plugin API catalog",
-    "feat(ffi): expose stealth metadata, fake quote, and LID lookup bindings",
-    "feat(core): harden socket reconnects, stealth metadata, and LID/status flows",
-    "refactor(store): harden SQLite catalog, file store, and serialization",
-    "refactor(security): strengthen obfuscation and zeroize crypto, noise, and signal",
-    "build(cargo): harden workspace dependencies, SQLite flags, and linker options",
-    "feat(tools): add standalone channel-status-fetch live inspector"
+    "feat(media,ui): add video-to-audio converter in attachment sheet, preview, and context menu",
+    "feat(media,music): support video-to-audio conversion in song and audio pickers",
+    "chore(plugin,diagnostics): resolve release kotlin compiler warnings",
+    "feat(music): add dual-handle audio trimming and compact song picker UI",
+    "chore(bindings): update uniffi source hash",
+    "feat(chat,stickers): add sticker sheet audio preview/filter and jump to first message",
+    "fix(ui,repo,core): fix bubble layout sizing, open-chat read persistence, typography, and tests",
+    "i18n: extract remaining hardcoded UI strings and complete 10-locale translations",
+    "feat(ui,plugin): add Plugin Hub, chat peek, sticker popup, and theme updates",
+    "feat(service): update connection service, watchdog, notifications, and audio helper",
+    "docs(plugin): sync plugin api reference and preset audit docs",
+    "feat(res): update localized strings and donation drawables",
+    "feat(ui): update chat, settings, explorer, media, and theme screens",
+    "feat(plugin): expand plugin engine, local sqlite api, and builtin presets",
+    "feat(core): update account runtime, backup, media, and repository layers",
+    "perf(core): pool request buffers and sync generated client models",
+    "chore(scripts): update build helpers, plugin metadata, and author config",
+    "build(gradle): update dependencies, proguard rules, and baseline profile"
   ],
   "changelogEntries": [
     {
-      "message": "fix(updater): publish and download only split release APKs and version.json",
-      "date": "2026-11-20T19:08:38+07:00",
-      "hash": "90d753f"
+      "message": "feat(media,ui): add video-to-audio converter in attachment sheet, preview, and context menu",
+      "date": "2026-11-25T00:21:28+07:00",
+      "hash": "29325fe"
     },
     {
-      "message": "feat(chat): log live edit history and allow editing media captions",
-      "date": "2026-11-20T18:40:40+07:00",
-      "hash": "f3328a5"
+      "message": "feat(media,music): support video-to-audio conversion in song and audio pickers",
+      "date": "2026-11-25T00:12:57+07:00",
+      "hash": "2cb41a1"
     },
     {
-      "message": "feat(core): log edit history on self-edits and support media caption edits",
-      "date": "2026-11-20T18:40:40+07:00",
-      "hash": "6410be0"
+      "message": "chore(plugin,diagnostics): resolve release kotlin compiler warnings",
+      "date": "2026-11-24T23:59:31+07:00",
+      "hash": "f774d3a"
     },
     {
-      "message": "feat(core): support audio sticker E2EE metadata, product snapshots, and sticker quote uploads",
-      "date": "2026-11-20T18:07:47+07:00",
-      "hash": "cadec18"
+      "message": "feat(music): add dual-handle audio trimming and compact song picker UI",
+      "date": "2026-11-24T23:54:34+07:00",
+      "hash": "0f17aff"
     },
     {
-      "message": "perf(core): preallocate history sync buffers and drop slack chat message capacity",
-      "date": "2026-11-20T18:07:47+07:00",
-      "hash": "dabb2a8"
+      "message": "chore(bindings): update uniffi source hash",
+      "date": "2026-11-24T23:41:10+07:00",
+      "hash": "406bcc6"
     },
     {
-      "message": "fix(media): add SSRF protection, bounded fetches, and safe HTML parsing for link previews",
-      "date": "2026-11-20T18:07:38+07:00",
-      "hash": "86bf9ba"
+      "message": "feat(chat,stickers): add sticker sheet audio preview/filter and jump to first message",
+      "date": "2026-11-24T23:29:16+07:00",
+      "hash": "af1962c"
     },
     {
-      "message": "fix(media): bound image decode dimensions and optimize WebP EXIF handling",
-      "date": "2026-11-20T18:07:38+07:00",
-      "hash": "83376f1"
+      "message": "fix(ui,repo,core): fix bubble layout sizing, open-chat read persistence, typography, and tests",
+      "date": "2026-11-24T22:25:11+07:00",
+      "hash": "06766d9"
     },
     {
-      "message": "fix(media): bound audio decoding limits and harden Ogg/Opus conversion",
-      "date": "2026-11-20T18:07:38+07:00",
-      "hash": "e5f6f4c"
+      "message": "i18n: extract remaining hardcoded UI strings and complete 10-locale translations",
+      "date": "2026-11-24T10:14:00+07:00",
+      "hash": "23f8189"
     },
     {
-      "message": "fix(media): harden private file creation and optimize streaming media I/O",
-      "date": "2026-11-20T18:07:38+07:00",
-      "hash": "24c319b"
+      "message": "feat(ui,plugin): add Plugin Hub, chat peek, sticker popup, and theme updates",
+      "date": "2026-11-24T09:48:56+07:00",
+      "hash": "84e6834"
     },
     {
-      "message": "perf(binary): add depth/allocation guards and LUT packing in binary codec",
-      "date": "2026-11-20T18:07:31+07:00",
-      "hash": "c09fcc0"
+      "message": "feat(service): update connection service, watchdog, notifications, and audio helper",
+      "date": "2026-11-23T18:34:19+07:00",
+      "hash": "8b50a19"
     },
     {
-      "message": "fix(binary): harden JID, node serde, and token lookup against DoS and log injection",
-      "date": "2026-11-20T18:07:31+07:00",
-      "hash": "91d19c5"
+      "message": "docs(plugin): sync plugin api reference and preset audit docs",
+      "date": "2026-11-23T18:34:10+07:00",
+      "hash": "cf4ff2e"
     },
     {
-      "message": "fix(proto): harden protobuf decode bounds and optimize allocations",
-      "date": "2026-11-20T18:07:22+07:00",
-      "hash": "68f3ae9"
+      "message": "feat(res): update localized strings and donation drawables",
+      "date": "2026-11-23T18:34:09+07:00",
+      "hash": "e817554"
     },
     {
-      "message": "feat(res): add strings for lyrics sync, favorite stickers, and presence settings",
-      "date": "2026-11-20T18:04:52+07:00",
-      "hash": "62bff2c"
+      "message": "feat(ui): update chat, settings, explorer, media, and theme screens",
+      "date": "2026-11-23T18:34:09+07:00",
+      "hash": "4bbe611"
     },
     {
-      "message": "feat(theme): persist sticker sheet open and send confirmation preferences",
-      "date": "2026-11-20T18:04:52+07:00",
-      "hash": "e609339"
+      "message": "feat(plugin): expand plugin engine, local sqlite api, and builtin presets",
+      "date": "2026-11-23T18:34:09+07:00",
+      "hash": "232f2d7"
     },
     {
-      "message": "fix(status): harden StoryPlayback bounds checks and avoid retired player leaks",
-      "date": "2026-11-20T18:04:52+07:00",
-      "hash": "45dc4a8"
+      "message": "feat(core): update account runtime, backup, media, and repository layers",
+      "date": "2026-11-23T18:34:09+07:00",
+      "hash": "bcf3734",
+      "body": "Include low-RAM Tokio worker thread budgeting in RolleysRepository,\ncustom chat lists, MP4 fast-start, sticker bulk importer, and backup/sync\nupdates."
     },
     {
-      "message": "fix(status): improve touch reliability, Canvas progress bar, and viewer safety",
-      "date": "2026-11-20T18:03:27+07:00",
-      "hash": "04f0024"
+      "message": "perf(core): pool request buffers and sync generated client models",
+      "date": "2026-11-23T18:34:00+07:00",
+      "hash": "4f1c392",
+      "body": "Add thread-local buffer and metadata reuse for transport requests and\nupdate generated core client model definitions."
     },
     {
-      "message": "feat(conversation): wire favorite stickers and sticker sheet preferences",
-      "date": "2026-11-20T18:03:27+07:00",
-      "hash": "42e54dd"
+      "message": "chore(scripts): update build helpers, plugin metadata, and author config",
+      "date": "2026-11-23T18:34:00+07:00",
+      "hash": "d929bab"
     },
     {
-      "message": "feat(privacy): add custom typing presence, auto-presence, and rolleys scheme guard",
-      "date": "2026-11-20T18:03:08+07:00",
-      "hash": "df8494d"
-    },
-    {
-      "message": "feat(stickers): add favorite stickers storage and picker/context menu controls",
-      "date": "2026-11-20T18:02:59+07:00",
-      "hash": "5065495"
-    },
-    {
-      "message": "feat(media): add preview lyrics offset estimation, tap-to-sync, and sticker audio parsing",
-      "date": "2026-11-20T18:02:49+07:00",
-      "hash": "0afea5e"
-    },
-    {
-      "message": "feat(quote): add product metadata fields and WebP sticker quote thumbnails",
-      "date": "2026-11-20T18:02:39+07:00",
-      "hash": "30c685e"
-    },
-    {
-      "message": "feat(settings): support custom gallery app icon pinned shortcuts",
-      "date": "2026-11-20T18:02:39+07:00",
-      "hash": "00f2b2d"
-    },
-    {
-      "message": "feat(diagnostics): add live leak, frame jank, and process resource watcher",
-      "date": "2026-11-20T18:02:27+07:00",
-      "hash": "c1012a3"
-    },
-    {
-      "message": "fix(crash): load bounded crash logs asynchronously and validate file paths",
-      "date": "2026-11-20T18:02:27+07:00",
-      "hash": "eab7ff7"
-    },
-    {
-      "message": "refactor(about): harden unlock puzzle state machine and feature visibility storage",
-      "date": "2026-11-20T18:02:18+07:00",
-      "hash": "ccdc69d"
-    },
-    {
-      "message": "perf(core): optimize BoundedCache locking and add trimToSize",
-      "date": "2026-11-20T18:02:18+07:00",
-      "hash": "0da6a2e"
-    },
-    {
-      "message": "feat(fake-quote): add toggle to combine or isolate channel profile spoof",
-      "date": "2026-11-20T11:18:17+07:00",
-      "hash": "9b74e17",
-      "body": "Switching FakeQuoteKind from NEWSLETTER_PROFILE to ORDER or another\npayload type previously kept non-empty newsletterJid/profileName fields\nactive in buildContextInfoJson, unintentionally combining newsletter\nforwarding metadata onto unrelated fake quotes.\n\nOnly attach forwardedNewsletterMessageInfo when NEWSLETTER_PROFILE is\nselected or the new \"Combine with Channel / Profile Spoof\" toggle is\nexplicitly enabled in FakeQuoteSheet."
-    },
-    {
-      "message": "perf(chat-ui): prevent ANR on 50k-100k+ char messages and fix read more",
-      "date": "2026-11-20T11:18:17+07:00",
-      "hash": "2186805",
-      "body": "Huge text, quoted replies, and multi-line payloads previously caused\nmain-thread hangs or truncated \"Read more\" expansion:\n- MediaSummaryParser ran DOT_MATCHES_ALL regexes across 100k-char strings\n- WhatsAppTextLinks scanned all tokens with O(N^2) overlap checks\n- Single Compose Text nodes over 8k chars overflowed HWUI textures\n- computeTextPhaseWindow only checked charBudget while maxLines clipped\n  separately, hiding \"Read more\" early on newline-heavy messages\n\nReplace regex summary parsing with O(1) prefix scanners, use binary\nsearch and span caps in WhatsAppTextFormatter, split large texts into\n4,096-char Column chunks, and unify line/character truncation in\ncomputeTextPhaseWindow with progressive expansion up to 512k chars."
-    },
-    {
-      "message": "perf(messages): bound quoted message summary prefix to 512 chars",
-      "date": "2026-11-20T14:46:03+07:00",
-      "hash": "e4775fe",
-      "body": "Quoting a 50k-100k+ character message previously embedded the entire\nquoted body into the `[Quote: id|participant|text]` summary prefix,\ninflating SQLite rows and causing UI parser stalls on Android.\n\nSanitize and truncate the quoted preview text in a single pass at 512\ncharacters while preserving `[Quote: ...]` delimiter safety."
-    },
-    {
-      "message": "perf(ui): optimize chat list, wallpaper, theme, and message components",
-      "date": "2026-11-20T11:18:17+07:00",
-      "hash": "40bf6e6",
-      "body": "Reduces recomposition and allocation overhead across chat list, message,\nwallpaper, and theme components, fixes nullable callback return types in\nChatListScreen, and scopes ThemeManager prefs cache by context identity."
-    },
-    {
-      "message": "perf(app,service): optimize startup, raw logger, and keep-alive services",
-      "date": "2026-11-20T11:18:17+07:00",
-      "hash": "6dc308a",
-      "body": "Streamlines application/activity initialization, raw message logging,\nfloating keep-alive/foreground tracking, and updates ConnectionRecoveryTest."
-    },
-    {
-      "message": "perf(service): offload BootReceiver work via goAsync on IO dispatcher",
-      "date": "2026-11-20T11:18:17+07:00",
-      "hash": "29b1dfa",
-      "body": "Moves SharedPreferences, file cleanup, and service start handling off\nthe main receiver thread with credential-storage error guards."
-    },
-    {
-      "message": "feat(app): add stealth metadata, call blocker, fake quotes, and perf fixes",
-      "date": "2026-11-20T11:18:17+07:00",
-      "hash": "9242fb5",
-      "body": "Adds privacy stealth metadata settings, call blocking, fake quote and\nspoiler UI/plugin support, sticker sound coordination, bounded caches,\nbacklog-only chat update throttling, and updated unit test coverage."
-    },
-    {
-      "message": "chore(scripts): update native build helper utilities",
-      "date": "2026-11-20T11:18:17+07:00",
-      "hash": "4bb967f",
-      "body": "Refine symbol validation and packaging helper scripts for release\nartifact checks."
-    },
-    {
-      "message": "feat(ffi): sync UniFFI bindings and plugin API catalog",
-      "date": "2026-11-20T07:58:32+07:00",
-      "hash": "a0fad9a",
-      "body": "Updates generated Kotlin bindings, plugin API dispatch table, and docs\nfor LID conversion, fake quotes, and stealth metadata configuration."
-    },
-    {
-      "message": "feat(ffi): expose stealth metadata, fake quote, and LID lookup bindings",
-      "date": "2026-11-20T14:46:03+07:00",
-      "hash": "dae0851",
-      "body": "Add UniFFI client bindings for BotPluginMetadata stealth configuration,\nfake quote dispatch, and LID/PN contact resolution."
-    },
-    {
-      "message": "feat(core): harden socket reconnects, stealth metadata, and LID/status flows",
-      "date": "2026-11-20T07:57:32+07:00",
-      "hash": "987afc3",
-      "body": "Fixes socket/connection stall recovery, adds BotPluginMetadata stealth\ninjection, and expands companion, LID conversion, and status handling."
-    },
-    {
-      "message": "refactor(store): harden SQLite catalog, file store, and serialization",
-      "date": "2026-11-20T07:54:36+07:00",
-      "hash": "4c804d6",
-      "body": "Consolidates SQLite schema/query catalog helpers, enforces zero-allocation\nbuffer JSON decoding, and tightens store trait error handling and fs safety."
-    },
-    {
-      "message": "refactor(security): strengthen obfuscation and zeroize crypto, noise, and signal",
-      "date": "2026-11-20T07:54:20+07:00",
-      "hash": "e9a5868",
-      "body": "Hardens compile-time seed derivation in baileys-obf and applies consistent\nzeroization, literal protection, and cipher/session safety across\ncrypto, noise, proto, and signal crates."
-    },
-    {
-      "message": "build(cargo): harden workspace dependencies, SQLite flags, and linker options",
-      "date": "2026-11-20T07:53:32+07:00",
-      "hash": "1fc78f1",
-      "body": "Switches to resolver 3, enables zeroize on RustCrypto primitives,\ntightens default features on rustls/reqwest/chrono/regex, hardens\nSQLite compile flags, and configures linker/strip flags per target."
-    },
-    {
-      "message": "feat(tools): add standalone channel-status-fetch live inspector",
-      "date": "2026-11-20T07:53:32+07:00",
-      "hash": "2308cb0",
-      "body": "Adds a standalone CLI tool for inspecting WhatsApp channel_status links\nand newsletter status wire responses."
+      "message": "build(gradle): update dependencies, proguard rules, and baseline profile",
+      "date": "2026-11-23T18:34:00+07:00",
+      "hash": "4272253"
     }
   ],
-  "previousGitHash": "ada81fb",
+  "previousGitHash": "90d753f",
   "assets": {
     "arm64-v8a": {
       "abi": "arm64-v8a",
       "downloadUrl": "https://github.com/Towartz/Rolleys-release-build/releases/download/android-rolling/app-arm64-v8a-release.apk",
-      "fileSizeBytes": 19557041,
-      "sha256": "4c7d8aca95dc5007b3f050ef5292a63681ff7c0c296c05e9c16d927e6fb8429f",
+      "fileSizeBytes": 18783356,
+      "sha256": "0f47676b483d98f8d16cffe0e8ff636486eb6a03f29966cfacb1a2403a046782",
       "abiLabel": "ARM64 (64-bit)"
     },
     "armeabi-v7a": {
       "abi": "armeabi-v7a",
       "downloadUrl": "https://github.com/Towartz/Rolleys-release-build/releases/download/android-rolling/app-armeabi-v7a-release.apk",
-      "fileSizeBytes": 19380917,
-      "sha256": "419fc3c8515833e625c6a58e78bf8f5fd25992104f437e29b519cbfa05e294d4",
+      "fileSizeBytes": 18562174,
+      "sha256": "281d93c6e394c83754f5e711448a20da2d96aa9b8b5b5c5b4139b5ba8ba85a8f",
       "abiLabel": "ARMv7 (32-bit)"
     }
   },
   "apkUrl_arm64": "https://github.com/Towartz/Rolleys-release-build/releases/download/android-rolling/app-arm64-v8a-release.apk",
-  "sha256_arm64": "4c7d8aca95dc5007b3f050ef5292a63681ff7c0c296c05e9c16d927e6fb8429f",
+  "sha256_arm64": "0f47676b483d98f8d16cffe0e8ff636486eb6a03f29966cfacb1a2403a046782",
   "apkUrl_armv7": "https://github.com/Towartz/Rolleys-release-build/releases/download/android-rolling/app-armeabi-v7a-release.apk",
-  "sha256_armv7": "419fc3c8515833e625c6a58e78bf8f5fd25992104f437e29b519cbfa05e294d4"
+  "sha256_armv7": "281d93c6e394c83754f5e711448a20da2d96aa9b8b5b5c5b4139b5ba8ba85a8f"
 }
