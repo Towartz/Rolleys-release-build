@@ -1,141 +1,87 @@
 {
-  "versionName": "0.268.0 (29325fe)",
-  "gitHash": "29325fe",
-  "versionCode": 722,
-  "publishedAt": "2026-11-24T17:25:53Z",
+  "versionName": "0.272.0 (c4dc753)",
+  "gitHash": "c4dc753",
+  "versionCode": 733,
+  "publishedAt": "2026-11-25T13:14:18Z",
   "changelog": [
-    "feat(media,ui): add video-to-audio converter in attachment sheet, preview, and context menu",
-    "feat(media,music): support video-to-audio conversion in song and audio pickers",
-    "chore(plugin,diagnostics): resolve release kotlin compiler warnings",
-    "feat(music): add dual-handle audio trimming and compact song picker UI",
-    "chore(bindings): update uniffi source hash",
-    "feat(chat,stickers): add sticker sheet audio preview/filter and jump to first message",
-    "fix(ui,repo,core): fix bubble layout sizing, open-chat read persistence, typography, and tests",
-    "i18n: extract remaining hardcoded UI strings and complete 10-locale translations",
-    "feat(ui,plugin): add Plugin Hub, chat peek, sticker popup, and theme updates",
-    "feat(service): update connection service, watchdog, notifications, and audio helper",
-    "docs(plugin): sync plugin api reference and preset audit docs",
-    "feat(res): update localized strings and donation drawables",
-    "feat(ui): update chat, settings, explorer, media, and theme screens",
-    "feat(plugin): expand plugin engine, local sqlite api, and builtin presets",
-    "feat(core): update account runtime, backup, media, and repository layers",
-    "perf(core): pool request buffers and sync generated client models",
-    "chore(scripts): update build helpers, plugin metadata, and author config",
-    "build(gradle): update dependencies, proguard rules, and baseline profile"
+    "feat(conversation): add chat wallpaper sync and WAProto message features",
+    "feat(groups): support adding bot JIDs and check participant status",
+    "chore(ui): remove redundant null checks and casts",
+    "fix(sticker): preserve full audio track when trimming video stickers",
+    "feat(stickers): auto-split packs over 30 and add quick-send ux",
+    "feat(settings,protocol): add protocol types inspector and visibility toggle",
+    "refactor(home): remove phone-masking eye button from top bar",
+    "fix(newsletter): dismiss emoji sheet on composer focus"
   ],
   "changelogEntries": [
     {
-      "message": "feat(media,ui): add video-to-audio converter in attachment sheet, preview, and context menu",
-      "date": "2026-11-25T00:21:28+07:00",
-      "hash": "29325fe"
+      "message": "feat(conversation): add chat wallpaper sync and WAProto message features",
+      "date": "2026-11-25T20:03:38+07:00",
+      "hash": "c4dc753",
+      "body": "Wire 9:16 portrait chat wallpaper upload, blur/rotation/doodle-opacity\nadjustments, and theme sync alongside limit-sharing, after-read\nephemeral duration, keep-in-chat, scheduled messages, draft sync, and\nquiz/poll option additions."
     },
     {
-      "message": "feat(media,music): support video-to-audio conversion in song and audio pickers",
-      "date": "2026-11-25T00:12:57+07:00",
-      "hash": "2cb41a1"
+      "message": "feat(groups): support adding bot JIDs and check participant status",
+      "date": "2026-11-25T20:02:02+07:00",
+      "hash": "fbd352d",
+      "body": "Preserve full JIDs such as 867051314767696@bot in AddParticipantDialog\nwith a one-tap Meta AI chip, format @bot JIDs cleanly in ContactHelper,\nand report non-200 participant update statuses in GroupInfoViewModel."
     },
     {
-      "message": "chore(plugin,diagnostics): resolve release kotlin compiler warnings",
-      "date": "2026-11-24T23:59:31+07:00",
-      "hash": "f774d3a"
+      "message": "chore(ui): remove redundant null checks and casts",
+      "date": "2026-11-25T20:01:15+07:00",
+      "hash": "311bb14",
+      "body": "Clean up unnecessary safe calls, redundant toInt() conversions, and\nnon-null assertions in GroupInfoScreen and ChannelFeedScreen."
     },
     {
-      "message": "feat(music): add dual-handle audio trimming and compact song picker UI",
-      "date": "2026-11-24T23:54:34+07:00",
-      "hash": "0f17aff"
+      "message": "fix(sticker): preserve full audio track when trimming video stickers",
+      "date": "2026-11-25T20:00:43+07:00",
+      "hash": "3bea663",
+      "body": "Extract the full M4A audio track (with raw file fallback) instead of\ntruncating at the sticker trim length, and guard against empty muxer\noutputs."
     },
     {
-      "message": "chore(bindings): update uniffi source hash",
-      "date": "2026-11-24T23:41:10+07:00",
-      "hash": "406bcc6"
+      "message": "feat(stickers): auto-split packs over 30 and add quick-send ux",
+      "date": "2026-11-25T15:58:23+07:00",
+      "hash": "8a7ede5",
+      "body": "Split sticker packs exceeding WhatsApp's 30-sticker limit into numbered\n30-sticker chunks when sending, and allow one-tap sending of imported\npacks from section headers, the pack drawer, and the pack send dialog."
     },
     {
-      "message": "feat(chat,stickers): add sticker sheet audio preview/filter and jump to first message",
-      "date": "2026-11-24T23:29:16+07:00",
-      "hash": "af1962c"
+      "message": "feat(settings,protocol): add protocol types inspector and visibility toggle",
+      "date": "2026-11-25T15:58:23+07:00",
+      "hash": "2dbe2c0",
+      "body": "Add a Protocol Types screen in Advanced Settings to inspect WAProto\nmessages, enums, custom builders, and schema definitions, along with a\ntoggle to display hidden protocol messages as timeline pills in chats."
     },
     {
-      "message": "fix(ui,repo,core): fix bubble layout sizing, open-chat read persistence, typography, and tests",
-      "date": "2026-11-24T22:25:11+07:00",
-      "hash": "06766d9"
+      "message": "refactor(home): remove phone-masking eye button from top bar",
+      "date": "2026-11-25T15:57:57+07:00",
+      "hash": "f7a06e6",
+      "body": "Keep phone-number masking exclusively in Privacy Settings so the Home\napp bar stays uncluttered."
     },
     {
-      "message": "i18n: extract remaining hardcoded UI strings and complete 10-locale translations",
-      "date": "2026-11-24T10:14:00+07:00",
-      "hash": "23f8189"
-    },
-    {
-      "message": "feat(ui,plugin): add Plugin Hub, chat peek, sticker popup, and theme updates",
-      "date": "2026-11-24T09:48:56+07:00",
-      "hash": "84e6834"
-    },
-    {
-      "message": "feat(service): update connection service, watchdog, notifications, and audio helper",
-      "date": "2026-11-23T18:34:19+07:00",
-      "hash": "8b50a19"
-    },
-    {
-      "message": "docs(plugin): sync plugin api reference and preset audit docs",
-      "date": "2026-11-23T18:34:10+07:00",
-      "hash": "cf4ff2e"
-    },
-    {
-      "message": "feat(res): update localized strings and donation drawables",
-      "date": "2026-11-23T18:34:09+07:00",
-      "hash": "e817554"
-    },
-    {
-      "message": "feat(ui): update chat, settings, explorer, media, and theme screens",
-      "date": "2026-11-23T18:34:09+07:00",
-      "hash": "4bbe611"
-    },
-    {
-      "message": "feat(plugin): expand plugin engine, local sqlite api, and builtin presets",
-      "date": "2026-11-23T18:34:09+07:00",
-      "hash": "232f2d7"
-    },
-    {
-      "message": "feat(core): update account runtime, backup, media, and repository layers",
-      "date": "2026-11-23T18:34:09+07:00",
-      "hash": "bcf3734",
-      "body": "Include low-RAM Tokio worker thread budgeting in RolleysRepository,\ncustom chat lists, MP4 fast-start, sticker bulk importer, and backup/sync\nupdates."
-    },
-    {
-      "message": "perf(core): pool request buffers and sync generated client models",
-      "date": "2026-11-23T18:34:00+07:00",
-      "hash": "4f1c392",
-      "body": "Add thread-local buffer and metadata reuse for transport requests and\nupdate generated core client model definitions."
-    },
-    {
-      "message": "chore(scripts): update build helpers, plugin metadata, and author config",
-      "date": "2026-11-23T18:34:00+07:00",
-      "hash": "d929bab"
-    },
-    {
-      "message": "build(gradle): update dependencies, proguard rules, and baseline profile",
-      "date": "2026-11-23T18:34:00+07:00",
-      "hash": "4272253"
+      "message": "fix(newsletter): dismiss emoji sheet on composer focus",
+      "date": "2026-11-25T15:57:57+07:00",
+      "hash": "881d81e",
+      "body": "Close the emoji and sticker sheet when the channel post input gains\nfocus instead of relying on a clickable modifier that the text field\nconsumed."
     }
   ],
-  "previousGitHash": "90d753f",
+  "previousGitHash": "29325fe",
   "assets": {
     "arm64-v8a": {
       "abi": "arm64-v8a",
       "downloadUrl": "https://github.com/Towartz/Rolleys-release-build/releases/download/android-rolling/app-arm64-v8a-release.apk",
-      "fileSizeBytes": 18783356,
-      "sha256": "0f47676b483d98f8d16cffe0e8ff636486eb6a03f29966cfacb1a2403a046782",
+      "fileSizeBytes": 18930812,
+      "sha256": "6177b5a694fc8ccd17c354b1dc59eb94752683fff147ea64bcb96fcd7dd30430",
       "abiLabel": "ARM64 (64-bit)"
     },
     "armeabi-v7a": {
       "abi": "armeabi-v7a",
       "downloadUrl": "https://github.com/Towartz/Rolleys-release-build/releases/download/android-rolling/app-armeabi-v7a-release.apk",
-      "fileSizeBytes": 18562174,
-      "sha256": "281d93c6e394c83754f5e711448a20da2d96aa9b8b5b5c5b4139b5ba8ba85a8f",
+      "fileSizeBytes": 18726014,
+      "sha256": "b06c4e420cbc85097d196cfa99a12e848453bcb0a1d3b4a0c9d6e1763fb55318",
       "abiLabel": "ARMv7 (32-bit)"
     }
   },
   "apkUrl_arm64": "https://github.com/Towartz/Rolleys-release-build/releases/download/android-rolling/app-arm64-v8a-release.apk",
-  "sha256_arm64": "0f47676b483d98f8d16cffe0e8ff636486eb6a03f29966cfacb1a2403a046782",
+  "sha256_arm64": "6177b5a694fc8ccd17c354b1dc59eb94752683fff147ea64bcb96fcd7dd30430",
   "apkUrl_armv7": "https://github.com/Towartz/Rolleys-release-build/releases/download/android-rolling/app-armeabi-v7a-release.apk",
-  "sha256_armv7": "281d93c6e394c83754f5e711448a20da2d96aa9b8b5b5c5b4139b5ba8ba85a8f"
+  "sha256_armv7": "b06c4e420cbc85097d196cfa99a12e848453bcb0a1d3b4a0c9d6e1763fb55318"
 }
